@@ -4,6 +4,8 @@ This repository contains SyncFi documentation intended for GitBook publishing.
 
 ## GitBook structure
 
-Use `SUMMARY.md` as the navigation entrypoint.
+GitBook content lives under `docs/`.
+
+Use `docs/SUMMARY.md` as the navigation entrypoint.
 
 

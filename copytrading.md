@@ -1,5 +1,0 @@
-# Copytrading
-
-> Placeholder page — content will be added later.
-
-
