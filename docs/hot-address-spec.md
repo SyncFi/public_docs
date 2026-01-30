@@ -22,7 +22,7 @@ High-level approach:
 
 ---
 
-## 2) Inputs (recommended)
+## 2) Inputs
 
 - `user_capital`: user capital (U / USDT equivalent)
 - `lookback_days`: time window (e.g. 7 / 30 / 90)
@@ -254,7 +254,7 @@ Frontend copy examples:
 
 ---
 
-## 8) Recommended output fields
+## 8) Output fields
 
 - `address`, `chain`
 - `stats`:
