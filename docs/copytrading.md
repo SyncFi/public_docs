@@ -1,5 +1,14 @@
 # Copytrading
 
+## TL;DR (Too Long; Didn't Read)
+
+- **Strategies** drive copy trading; SyncFi monitors on-chain activity and triggers execution via an event pipeline
+- **Enabled / Disabled**: disabling a strategy can trigger immediate market closes of its virtual positions
+- **Sizing**: choose proportional sizing (equity ratio) or fixed amount; **Multiplier** scales proportional sizing
+- **Execution constraints**: opens can fail if computed size is below DEX minimum order size
+- **Risk controls**: Max Leverage is enforced per strategy virtual position; account exposure can add up across multiple strategies
+- **TP/SL**: account-level, reduce-only TP/SL orders; latest strategy settings override prior TP/SL config
+
 ## How SyncFi copy trading works
 
 SyncFi triggers trades through **strategies**. To minimize propagation latency, we:

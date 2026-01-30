@@ -1,5 +1,13 @@
 # Fees & VIP
 
+## TL;DR (Too Long; Didn't Read)
+
+- SyncFi uses **Hyperliquid builder codes** to charge fees **per order** (within Hyperliquid limits)
+- Users must authorize builder fees via on-chain **ApproveBuilderFee**
+- Hyperliquid limits: **perps <= 0.1%**, **spot <= 1%**
+- VIP fee rate is based on **30-day rolling trading volume**
+- Wallet-specific fee handling details are in `wallets.md`
+
 This page documents Hyperliquid builder codes, allowed fee ranges, and SyncFi VIP fee tiers.
 
 ## Hyperliquid builder codes

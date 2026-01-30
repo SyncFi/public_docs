@@ -10,6 +10,8 @@
   - [Position Model](position.md)
 - Pricing
   - [Fees & VIP](fee.md)
-- [Discovery](discovery.md)
+- Leader Discovery
+  - [Discover a Leader](discovery.md)
+  - [Hot Address Spec](hot-address-spec.md)
 
 

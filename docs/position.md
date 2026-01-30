@@ -1,5 +1,13 @@
 # Position Model (Virtual Positions)
 
+## TL;DR (Too Long; Didn't Read)
+
+- One account can follow **multiple leaders** on the same symbol, but the exchange shows only **one real net position**
+- SyncFi uses **virtual positions** (per follower + leader + symbol) so closes are attributed correctly
+- We “mark” the exposure per leader; on close we only close the **marked portion**
+- Supports **partial close**, **full close**, and **reversal** without accidentally flattening unrelated exposure
+- TP/SL uses **reduce-only**; virtual partial closes may require non-reduce-only opposite-side orders in multi-leader netting
+
 ## Why we need virtual positions
 
 In our system, **one trading account can follow multiple leaders** and **trade multiple symbols**.  

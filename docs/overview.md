@@ -1,5 +1,14 @@
 # SyncFi: Universal Copy Trading Platform
 
+## TL;DR (Too Long; Didn't Read)
+
+- **Universal copy trading** across digital asset markets (starting with Hyperliquid)
+- **Safer multi-leader copying** via virtual positions (avoid "close everything" mistakes)
+- **Low latency execution** via on-chain P2P monitoring + event-driven, in-memory propagation
+- **No subscriptions**: fees handled per order via Hyperliquid builder codes
+- **Safer funds & full control** with multiple wallet options (export key / import key / API keys)
+- **Smarter leader selection**: evaluates copyability so smaller accounts can actually follow
+
 ## Simple Flow, Smarter Follow
 
 ---

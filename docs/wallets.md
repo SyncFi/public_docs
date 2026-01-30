@@ -1,5 +1,13 @@
 # Wallets & Fee Handling
 
+## TL;DR (Too Long; Didn't Read)
+
+- SyncFi supports **3 wallet types**: generated (exportable key), imported by private key, imported by API keys
+- Users can **self-custody**, move funds anytime, and keep full control of wallets and positions
+- Hyperliquid builder fees require **ApproveBuilderFee** authorization (on-chain)
+- For API-keys wallets, approval must be signed by the **main wallet** (not an API sub-wallet)
+- Without (or after revoking) approval, SyncFi may be unable to trade/copy trade on that wallet
+
 This page explains wallet types supported by SyncFi and how fee handling (Hyperliquid builder fees) works for each.
 
 ## Wallet types

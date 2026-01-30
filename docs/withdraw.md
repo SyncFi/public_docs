@@ -1,5 +1,12 @@
 # Withdraw
 
+## TL;DR (Too Long; Didn't Read)
+
+- After security verification, withdraw **any amount** to **any destination address**
+- Withdrawals are sent **directly from Hyperliquid** to your destination address
+- To withdraw all while positions are open, **disable all related strategies**; the system closes positions at market first
+- Withdrawal fee is **$1 per transaction**
+
 ## Overview
 
 After passing required security verification, you can withdraw **any amount** to **any destination address** you choose.

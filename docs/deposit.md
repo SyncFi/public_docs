@@ -1,5 +1,13 @@
 # Deposit
 
+## TL;DR (Too Long; Didn't Read)
+
+- Deposits are **USDC on Arbitrum One**, bridged into **Hyperliquid** via the official bridge
+- Users send USDC to the provided deposit address (no ETH needed initially)
+- SyncFi monitors on-chain transfers/confirmations, then funds gas via a **Gas Distributor**
+- About **$1** is deducted to cover gas/ops, and the remaining USDC is bridged to Hyperliquid
+- The deposit address design prioritizes **security** (especially for user-exportable/self-custody wallets)
+
 This page specifies the deposit flow and address design for SyncFi.
 
 **SyncFi** runs on **Arbitrum** and supports deposits in USDC, which are bridged into **Hyperliquid** via Hyperliquid’s official bridge contract.
