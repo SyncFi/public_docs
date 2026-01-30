@@ -5,10 +5,16 @@
 - SyncFi uses **Hyperliquid builder codes** to charge fees **per order** (within Hyperliquid limits)
 - Users must authorize builder fees via on-chain **ApproveBuilderFee**
 - Hyperliquid limits: **perps <= 0.1%**, **spot <= 1%**
+- Fixed fees: **Deposit = $1/tx**, **Withdraw = $1/tx**
 - VIP fee rate is based on **30-day rolling trading volume**
 - Wallet-specific fee handling details are in [Wallets & Fee Handling](wallets.md)
 
 This page documents Hyperliquid builder codes, allowed fee ranges, and SyncFi VIP fee tiers.
+
+## Fixed fees
+
+- **Deposit fee:** $1 per transaction
+- **Withdrawal fee:** $1 per transaction
 
 ## Hyperliquid builder codes
 

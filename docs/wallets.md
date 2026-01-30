@@ -2,7 +2,7 @@
 
 ## TL;DR (Too Long; Didn't Read)
 
-- SyncFi supports **3 wallet types**: generated (exportable key), imported by private key, imported by API keys
+- SyncFi supports **2 wallet types**: generated (exportable key) and imported by API keys
 - Users can **self-custody**, move funds anytime, and keep full control of wallets and positions
 - Hyperliquid builder fees require **ApproveBuilderFee** authorization (on-chain)
 - For API-keys wallets, approval must be signed by the **main wallet** (not an API sub-wallet)
@@ -12,13 +12,12 @@ This page explains wallet types supported by SyncFi and how fee handling (Hyperl
 
 ## Wallet types
 
-SyncFi supports three types of trading wallets:
+SyncFi supports two types of trading wallets:
 
 - **Generated Wallets**: wallets created by SyncFi (you can export the private key and self-custody)
-- **Imported Wallets (Private Key)**: import a wallet by private key so you keep full control
 - **Imported Wallets (API Keys)**: connect your existing Hyperliquid account via API keys (no private key required)
 
-All wallet types can be used for strategies and copy trading. However, fee handling and builder codes differ because of Hyperliquid’s on-chain permission model.
+Both wallet types can be used for strategies and copy trading. However, fee handling and builder codes differ because of Hyperliquid’s on-chain permission model.
 
 ---
 
@@ -60,21 +59,6 @@ Because SyncFi controls the main wallet:
 - No manual approval: SyncFi handles ApproveBuilderFee during wallet setup.
 - Full feature support: all strategies and advanced features are available.
 - Stable fee model: fees are consistently applied according to SyncFi pricing.
-
----
-
-## Imported Wallets (Private Key)
-
-### What is an Imported Wallet (Private Key)?
-
-An Imported Wallet (Private Key) is a wallet that you bring into SyncFi by importing its private key.
-
-Why users choose it:
-- **Maximum portability**: you can move funds anytime and anywhere
-- **Full control**: you retain ultimate control of the wallet and its positions
-- **Self-custody friendly**: you can export/backup the private key and manage it yourself
-
-> Note: This option is designed for users who want absolute control over their wallet and do not want to rely on subscription-like custody models.
 
 ---
 
