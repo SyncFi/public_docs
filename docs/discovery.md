@@ -27,7 +27,7 @@ Hot Addresses are selected by SyncFi using dedicated screening rules to find Hyp
 Key idea:
 - Users can filter for leaders that better match their **capital size**, reducing the chance of “can’t open” outcomes caused by minimum order size constraints.
 
-For how the Hot Addresses screening works, see `hot-address-spec.md`.
+For how the Hot Addresses screening works, see [Hot Address Spec](hot-address-spec).
 
 ### 2) Hyperliquid Official Leaderboard
 

@@ -39,7 +39,7 @@ SyncFi introduces **virtual positions** and an algorithmic position ledger:
 - We track positions per **leader + symbol** internally, even though the exchange only exposes a single net position per symbol.
 - When a leader closes, we close **only the portion** of the follower exposure attributed to that leader.
 
-This makes multi-leader copy trading safer and more accurate. See `position.md` for details.
+This makes multi-leader copy trading safer and more accurate. See [Position Model](position) for details.
 
 ### Reject high latency: built for fast signal propagation
 Many copy-trading platforms suffer from slow pipelines. From receiving a leader signal to actually triggering execution can take **2–5 minutes**. With that kind of delay, market conditions may have already changed dramatically, and the copied “strategy” often becomes invalid.
@@ -59,7 +59,7 @@ SyncFi uses **Hyperliquid builder codes** to collect a reasonable commission **a
 - No recurring billing setup
 - Fees are handled directly by Hyperliquid as part of the on-chain trade flow
 
-See `fee.md` for details.
+See [Fees & VIP](fee) for details.
 
 ### Safer funds: wallet isolation and full user control
 Compared to many platforms, SyncFi is designed to keep user funds safer and more flexible in day-to-day use (depositing, withdrawing, and position control).
@@ -69,7 +69,7 @@ We support multiple wallet options to isolate funds and match different user pre
 - **Private key import** for users who want maximum control and portability
 - **API key import** for users who prefer connecting an existing Hyperliquid account without sharing private keys
 
-Users can move funds at any time and keep full control over their wallets and positions. See `wallets.md` for details.
+Users can move funds at any time and keep full control over their wallets and positions. See [Wallets & Fee Handling](wallets) for details.
 
 ### Optimized trade details to improve outcomes
 Beyond accounting correctness, we continuously refine strategy parameters and execution details to:

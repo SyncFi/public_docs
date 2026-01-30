@@ -1,17 +1,17 @@
 # Summary
 
-- [Overview](overview.md)
+- [Overview](overview)
 - Wallets & Funding
-  - [Wallets & Fee Handling](wallets.md)
-  - [Deposit](deposit.md)
-  - [Withdraw](withdraw.md)
+  - [Wallets & Fee Handling](wallets)
+  - [Deposit](deposit)
+  - [Withdraw](withdraw)
 - Copy Trading
-  - [Copytrading](copytrading.md)
-  - [Position Model](position.md)
+  - [Copytrading](copytrading)
+  - [Position Model](position)
 - Pricing
-  - [Fees & VIP](fee.md)
+  - [Fees & VIP](fee)
 - Leader Discovery
-  - [Discover a Leader](discovery.md)
-  - [Hot Address Spec](hot-address-spec.md)
+  - [Discover a Leader](discovery)
+  - [Hot Address Spec](hot-address-spec)
 
 

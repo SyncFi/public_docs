@@ -6,7 +6,7 @@
 - Users must authorize builder fees via on-chain **ApproveBuilderFee**
 - Hyperliquid limits: **perps <= 0.1%**, **spot <= 1%**
 - VIP fee rate is based on **30-day rolling trading volume**
-- Wallet-specific fee handling details are in `wallets.md`
+- Wallet-specific fee handling details are in [Wallets & Fee Handling](wallets)
 
 This page documents Hyperliquid builder codes, allowed fee ranges, and SyncFi VIP fee tiers.
 
@@ -30,7 +30,7 @@ SyncFi’s fee settings always stay within these Hyperliquid constraints.
 
 ## Wallets and fee handling
 
-Wallet type affects how builder fee authorization is handled on-chain. See `wallets.md` for the full explanation.
+Wallet type affects how builder fee authorization is handled on-chain. See [Wallets & Fee Handling](wallets) for the full explanation.
 
 ---
 

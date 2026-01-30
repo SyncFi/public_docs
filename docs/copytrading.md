@@ -107,7 +107,7 @@ The maximum allowed leverage for the **virtual position** created by this strate
 
 If the system estimates that the next order required to follow the leader would cause the strategy’s virtual position leverage to exceed **Max Leverage**, that copy trade will be **canceled**.
 
-> Note: Virtual positions are used to support “one account, multiple leaders, same symbol”. See `position.md` for details.
+> Note: Virtual positions are used to support “one account, multiple leaders, same symbol”. See [Position Model](position) for details.
 
 **How Max Leverage behaves with multiple leaders/strategies**
 
