@@ -269,14 +269,4 @@ Frontend copy examples:
 
 ---
 
-## 9) Backend implementation summary
-
-1) Read inputs: `user_capital`, `lookback_days`, `chain`, `risk_level`, `limit`  
-2) Map `capital_tier ∈ {T1, T2, T3}`  
-3) Fetch candidate pool for the chosen lookback window  
-4) Apply baseline filters (Section 4)  
-5) Compute 4 factors (Section 5)  
-6) Apply tier-specific filters + weights (Section 6)  
-7) Sort by `score_overall` descending; take Top `limit`  
-8) Return recommended fields (Section 8)
 
