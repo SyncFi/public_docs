@@ -1,6 +1,6 @@
-# Fee
+# Fees & VIP
 
-This page documents Hyperliquid builder codes, allowed fee ranges, and how fees work in SyncFi depending on wallet type.
+This page documents Hyperliquid builder codes, allowed fee ranges, and SyncFi VIP fee tiers.
 
 ## Hyperliquid builder codes
 
@@ -20,119 +20,33 @@ Hyperliquid supports **builder codes**, which allow a builder (such as SyncFi) t
 
 SyncFi’s fee settings always stay within these Hyperliquid constraints.
 
-## Wallet types and fee handling
+## Wallets and fee handling
 
-SyncFi supports two types of trading wallets:
-
-- **Generated Wallets** – wallets created and managed by SyncFi
-- **Imported Wallets** – your existing Hyperliquid account, connected via API keys
-
-Both wallet types can be used for strategies and copy-trading. However, fee handling and builder codes differ because of Hyperliquid’s on-chain permission model.
+Wallet type affects how builder fee authorization is handled on-chain. See `wallets.md` for the full explanation.
 
 ---
 
-## Generated Wallets
+## SyncFi VIP tiers (30-day rolling trading volume)
 
-### What is a Generated Wallet?
+Notes:
+- Higher cumulative trading volume in the last 30 days unlocks **lower fees**
+- Current default tier is **VIP1 (Beginner Pioneer)** with a fee rate of **0.20% (2‰)**
 
-A Generated Wallet is a Hyperliquid-compatible wallet that is:
-- Created by SyncFi
-- Programmatically controlled by SyncFi systems
-- Used exclusively for trading via SyncFi strategy and copy-trading infrastructure
+### VIP tiers and fee rates
 
-### How fees work with Generated Wallets
+| VIP Tier | Tier Name | 30-Day Cumulative Trading Volume (USDT) | Fee Rate | Discount vs VIP1 |
+|---|---|---:|---:|---|
+| VIP1 | Beginner Pioneer | 0 <= volume < 10,000 | 0.20% (2‰) | Baseline |
+| VIP2 | Steady Follower | 10,000 <= volume < 50,000 | 0.18% (1.8‰) | ~10% |
+| VIP3 | Elite Trader | 50,000 <= volume < 200,000 | 0.16% (1.6‰) | ~20% |
+| VIP4 | Strategy Master | 200,000 <= volume < 1,000,000 | 0.14% (1.4‰) | ~30% |
+| VIP5 | Investment Legend | volume >= 1,000,000 | 0.12% (1.2‰) | ~40% |
 
-Because SyncFi controls the main wallet:
+### Rule summary
 
-- **One-time on-chain builder approval**
-  - SyncFi sends an **ApproveBuilderFee** transaction from the wallet’s main address.
-  - This authorizes SyncFi’s builder address to charge a builder fee up to a predefined maximum rate (within the Hyperliquid limits described above).
-
-- **Automatic builder fees per order**
-  - For each order SyncFi places, it attaches Hyperliquid builder parameters such as:
-
-```json
-["b": builderAddress, "f": feeValue]
-```
-
-  - As long as \( f \leq maxFee \) set in ApproveBuilderFee, Hyperliquid distributes the configured fee share to SyncFi’s builder address.
-
-- **On-chain transparency**
-  - All builder fees are processed by Hyperliquid on-chain.
-  - Users can verify them via Hyperliquid info APIs and historical data.
-
-### Advantages of Generated Wallets
-
-- No manual approval: SyncFi handles ApproveBuilderFee during wallet setup.
-- Full feature support: all strategies and advanced features are available.
-- Stable fee model: fees are consistently applied according to SyncFi pricing.
-
----
-
-## Imported Wallets
-
-### What is an Imported Wallet?
-
-An Imported Wallet is your existing Hyperliquid account that you connect to SyncFi by providing:
-- Hyperliquid API key & secret
-- Optional trading permissions configured on Hyperliquid
-
-SyncFi does not hold your primary private keys. It only uses API credentials to place and manage orders on your behalf.
-
-**Important Recommendation**  
-If you plan to import a Hyperliquid API wallet (Hype API Wallet), SyncFi strongly recommends using the same address to log in to SyncFi as you use on Hyperliquid. This helps keep positions, permissions, and billing logic consistent.
-
-### Hyperliquid constraint: Main wallet vs API wallet
-
-Hyperliquid’s builder system requires:
-- **ApproveBuilderFee must be signed by your main wallet**
-- It cannot be signed by an agent or API sub-wallet
-
-As a result:
-- Even with trading API access, SyncFi cannot set or change your builder fee authorization by itself.
-- You must perform ApproveBuilderFee on-chain from your main Hyperliquid wallet.
-
-### How fees work with Imported Wallets
-
-To enable SyncFi to trade and charge builder fees on an Imported Wallet, there are two steps:
-
-**Stage 1 – One-time On-chain Approval (Required)**  
-You must:
-- Use your main Hyperliquid wallet (the owner of the account).
-- Send an ApproveBuilderFee transaction specifying:
-  - builder: SyncFi’s builder address
-  - maxFee: the maximum fee (in tenths of basis points) you authorize per order
-
-**Note**  
-When you perform this step through SyncFi, the platform will prompt your wallet for a signature before the import is completed. Make sure the account selected in your wallet is the same address as your main Hyperliquid account; otherwise, the approval will not apply to the correct Hyperliquid user and SyncFi will refuse the import request.
-
-**Stage 2 – Per-order Builder Fee Usage (Automatic)**  
-After ApproveBuilderFee is completed:
-- For all orders sent via your Imported Wallet, SyncFi attaches builder parameters such as:
-
-```json
-["b": builderAddress, "f": feePerOrder]
-```
-
-- As long as \( f \leq maxFee \) that you approved:
-  - Hyperliquid deducts the builder portion from your collateral/quote asset.
-  - Hyperliquid routes this amount to SyncFi’s builder account.
-
-### If you do not approve (or you revoke approval)
-
-If you either:
-- Do not perform ApproveBuilderFee, or
-- Manually revoke or reduce SyncFi’s builder approval on-chain after importing,
-
-then SyncFi cannot:
-- Import your Hyperliquid API wallet
-- Use your Hyperliquid API wallet to place or manage orders on Hyperliquid
-- Execute copy-trading or strategies for that Imported Wallet
-
-**Important Note**  
-If you revoke ApproveBuilderFee or reduce the fee rate SyncFi relies on after setting up an Imported Wallet, SyncFi will no longer be able to place trades or follow strategies for you on Hyperliquid. To continue copy-trading, you must:
-- Manually restore ApproveBuilderFee, or
-- Re-import the wallet with proper approval, or
-- Use a Generated Wallet.
+- VIP level is evaluated using a **30-day rolling window** of cumulative trading volume
+- Tier upgrades happen **automatically** once thresholds are met (no application required)
+- The system **re-evaluates daily** based on the most recent 30-day volume
+- Fees are calculated in real time using the **current VIP tier**
 
 

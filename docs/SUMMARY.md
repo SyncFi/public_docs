@@ -1,12 +1,15 @@
 # Summary
 
 - [Overview](overview.md)
-- [Position Model](position.md)
-- [Deposit](deposit.md)
-- [Withdraw](withdraw.md)
-- [Copytrading](copytrading.md)
-- [Fee](fee.md)
+- Wallets & Funding
+  - [Wallets & Fee Handling](wallets.md)
+  - [Deposit](deposit.md)
+  - [Withdraw](withdraw.md)
+- Copy Trading
+  - [Copytrading](copytrading.md)
+  - [Position Model](position.md)
+- Pricing
+  - [Fees & VIP](fee.md)
 - [Discovery](discovery.md)
-- [VIP Level](vip-level.md)
 
 
