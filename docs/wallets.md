@@ -4,12 +4,13 @@ This page explains wallet types supported by SyncFi and how fee handling (Hyperl
 
 ## Wallet types
 
-SyncFi supports two types of trading wallets:
+SyncFi supports three types of trading wallets:
 
-- **Generated Wallets**: wallets created and managed by SyncFi
-- **Imported Wallets**: your existing Hyperliquid account, connected via API keys
+- **Generated Wallets**: wallets created by SyncFi (you can export the private key and self-custody)
+- **Imported Wallets (Private Key)**: import a wallet by private key so you keep full control
+- **Imported Wallets (API Keys)**: connect your existing Hyperliquid account via API keys (no private key required)
 
-Both wallet types can be used for strategies and copy trading. However, fee handling and builder codes differ because of Hyperliquid’s on-chain permission model.
+All wallet types can be used for strategies and copy trading. However, fee handling and builder codes differ because of Hyperliquid’s on-chain permission model.
 
 ---
 
@@ -54,11 +55,26 @@ Because SyncFi controls the main wallet:
 
 ---
 
-## Imported Wallets
+## Imported Wallets (Private Key)
 
-### What is an Imported Wallet?
+### What is an Imported Wallet (Private Key)?
 
-An Imported Wallet is your existing Hyperliquid account that you connect to SyncFi by providing:
+An Imported Wallet (Private Key) is a wallet that you bring into SyncFi by importing its private key.
+
+Why users choose it:
+- **Maximum portability**: you can move funds anytime and anywhere
+- **Full control**: you retain ultimate control of the wallet and its positions
+- **Self-custody friendly**: you can export/backup the private key and manage it yourself
+
+> Note: This option is designed for users who want absolute control over their wallet and do not want to rely on subscription-like custody models.
+
+---
+
+## Imported Wallets (API Keys)
+
+### What is an Imported Wallet (API Keys)?
+
+An Imported Wallet (API Keys) is your existing Hyperliquid account that you connect to SyncFi by providing:
 - Hyperliquid API key & secret
 - Optional trading permissions configured on Hyperliquid
 
