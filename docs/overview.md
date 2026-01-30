@@ -72,17 +72,18 @@ Beyond accounting correctness, we continuously refine strategy parameters and ex
 
 ## Key Advantages
 
-### 1. Universal Asset Access
+### 1. Universal Asset Access(On going)
 **The only platform where you can copy trade everything**
 - Multi-asset coverage from crypto to prediction markets
 - Cross-chain strategy execution
 - Smart money and institutional movement tracking
 
 ### 2. Intelligent Strategy Curation
-**AI-powered selection of sustainable strategies**
+**Algo-powered selection of sustainable strategies**
 - Risk-adjusted performance analytics
 - Focus on long-term value creation
 - Strategy transparency and education
+- AI-Powerd selection of sustainable strategies will online soon
 
 **Smarter leader selection for your account size**
 Many platforms only rank leaders by metrics like PnL or ROI. In practice, many top whale accounts often trade with a relatively low position-to-equity ratio, meaning copied trade sizes for smaller followers can become too small to meet DEX minimum order size constraints.
